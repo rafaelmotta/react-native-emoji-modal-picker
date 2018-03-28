@@ -3,6 +3,8 @@
 # expo
 .expo/
 
+.DS_Store
+
 # dependencies
 /node_modules
 /.vscode
