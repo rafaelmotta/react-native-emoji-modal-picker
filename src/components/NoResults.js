@@ -2,17 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   View,
-  Text,
   StyleSheet
 } from 'react-native'
 
 import {
-  Emoji
+  Emoji,
+  Title
 } from './'
+
+import variables from '../config/variables'
 
 NoResults.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
   emoji: PropTypes.string
 }
 
@@ -23,17 +24,18 @@ NoResults.defaultProps = {
 function NoResults (props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text} numberOfLines={1}>
-        {props.children}
-      </Text>
+      <Title>{props.title}</Title>
       <Emoji name={props.emoji} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  text: {}
+  container: {
+    marginTop: variables.gutter * 2,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 })
 
 export default NoResults

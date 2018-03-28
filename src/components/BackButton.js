@@ -10,7 +10,8 @@ import {
   Text
 } from 'react-native'
 
-import theme from '../config/theme'
+import variables from '../config/variables'
+import images from '../config/images'
 
 BackButton.propTypes = {
   icon: PropTypes.string,
@@ -27,11 +28,15 @@ BackButton.defaultProps = {
 
 function BackButton (props) {
   return (
-    <View style={[styles.container, props.style]}>
+    <View style={styles.container}>
       <TouchableOpacity onPress={props.onPress}>
-        <Image></Image>
+        <View style={styles.inner}>
+          <Image
+            source={{ uri: images.backButton }}
+            style={styles.image}
+          />
+        </View>
       </TouchableOpacity>
-      />
     </View>
   )
 }
@@ -39,13 +44,16 @@ function BackButton (props) {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: theme.gutter,
-    left: 0,
+    top: 0,
+    left: variables.screenGutter - variables.gutter,
     zIndex: 150
   },
-  icon: {
-    fontSize: theme.backButtonIconSize,
-    backgroundColor: 'transparent'
+  inner: {
+    padding: variables.gutter
+  },
+  image: {
+    height: variables.scale(24),
+    width: variables.scale(24)
   }
 })
 

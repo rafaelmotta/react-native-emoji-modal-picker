@@ -18,7 +18,7 @@
     "eslint-plugin-react-native": "^3.2.1",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.4.2",
-    "jest-expo": "25.0.0",
+    "jest-expo": "24.0.0",
     "jest-serializer-enzyme": "^1.0.0",
     "react": "16.2.0",
     "react-native-mock": "^0.3.1",
@@ -30,16 +30,17 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js"
+    "test": "node node_modules/jest/bin/jest.js",
+    "lint": "./node_modules/.bin/eslint . --fix; exit 0"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^25.0.0",
+    "expo": "^24.0.0",
     "node-emoji": "^1.8.1",
     "prop-types": "^15.6.1",
     "react": "16.2.0",
-    "react-native": "0.52.0"
+    "react-native": "0.51.0"
   }
 }

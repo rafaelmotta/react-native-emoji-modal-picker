@@ -6,6 +6,8 @@ import {
   StyleSheet
 } from 'react-native'
 
+import variables from '../config/variables'
+
 Title.propTypes = {
   children: PropTypes.string.isRequired
 }
@@ -21,8 +23,11 @@ function Title (props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
-  text: {}
+  text: {
+    color: variables.titleColor,
+    fontWeight: '500',
+    fontSize: variables.scale(16)
+  }
 })
 
 export default Title

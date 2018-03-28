@@ -2,18 +2,20 @@ import React from 'react'
 import {
   StyleSheet,
   Dimensions,
-  TouchableWithoutFeedback,
+  Button,
   View,
-  Image
+  Text
 } from 'react-native'
 
 import {
+  Emoji,
   EmojiModalPicker
 } from './src/components'
 
 export default class App extends React.Component {
   state = {
-    show: false
+    show: false,
+    emoji: null
   }
 
   toggleModal = () => {
@@ -23,7 +25,7 @@ export default class App extends React.Component {
   }
 
   handleSelect = (emoji) => {
-    alert(emoji)
+    this.setState({ show: false, emoji })
   }
 
   onRequestClose = () => {
@@ -33,12 +35,15 @@ export default class App extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.toggleModal}>
-          <Image
-            style={styles.img}
-            source={{uri: 'https://s3.amazonaws.com/rafaelmotta021/oi.jpeg'}}
-          />
-        </TouchableWithoutFeedback>
+        <View>
+          {this.state.emoji && (
+            <View style={styles.emojiContainer}>
+              <Emoji name={this.state.emoji} />
+              <Text style={styles.emojiNameText}>{this.state.emoji}</Text>
+            </View>
+          )}
+          <Button title="Open" onPress={this.toggleModal} />
+        </View>
         <EmojiModalPicker
           show={this.state.show}
           onSelect={this.handleSelect}
@@ -60,5 +65,14 @@ const styles = StyleSheet.create({
   img: {
     width,
     height
+  },
+  emojiContainer: {
+    marginBottom: 15,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  emojiNameText: {
+    fontSize: 16,
+    color: '#333'
   }
 })

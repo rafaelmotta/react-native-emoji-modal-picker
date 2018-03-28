@@ -38,12 +38,8 @@ export default {
     return '#FFFFFF'
   },
 
-  get textColor () {
-    return '#444444'
-  },
-
-  get subtitleColor () {
-    return '#555555'
+  get titleColor () {
+    return '#3333'
   },
 
   get white () {
@@ -62,8 +58,19 @@ export default {
     return '#333333'
   },
 
+  get screenGutter () {
+    return this.scale(8)
+  },
+
   get gutter () {
     return this.scale(15)
+  },
+
+  /**
+   * Search
+   */
+  get inputPlaceholderColor () {
+    return '#999999'
   },
 
   /**
