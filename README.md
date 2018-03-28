@@ -4,6 +4,8 @@
 
 A Emoji Modal Picker
 
+⚠ This package is still in development. Bugs and suggestions are welcome :D
+
 ## Features
 
 - [x] Search
