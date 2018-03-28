@@ -11,7 +11,6 @@ import {
 } from 'react-native'
 
 import { LinearGradient } from 'expo'
-
 import emoji from 'node-emoji'
 
 import {
@@ -121,7 +120,10 @@ class EmojiModalPicker extends React.Component {
         onRequestClose={this.props.onRequestClose}
       >
         <View style={styles.container}>
-          <LinearGradient colors={['#333', 'transparent']} style={styles.shadow} />
+          <LinearGradient
+            colors={['#333', 'transparent']}
+            style={styles.shadow}
+          />
           <BackButton
             onPress={this.props.onRequestClose}
           />
@@ -143,6 +145,7 @@ class EmojiModalPicker extends React.Component {
                   return (
                     <NoResults
                       title={this.props.noResultsText}
+                      search={this.state.searchText}
                       emoji={this.props.noResultsEmoji}
                     />
                   )
@@ -178,10 +181,6 @@ const styles = StyleSheet.create({
     zIndex: 100,
     width: variables.screenWidth,
     height: variables.scale(150)
-  },
-  listContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   list: {
     paddingTop: variables.gutter * 8

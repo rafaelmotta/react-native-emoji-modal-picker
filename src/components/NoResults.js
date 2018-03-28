@@ -14,6 +14,7 @@ import variables from '../config/variables'
 
 NoResults.propTypes = {
   title: PropTypes.string.isRequired,
+  search: PropTypes.string,
   emoji: PropTypes.string
 }
 
@@ -22,9 +23,11 @@ NoResults.defaultProps = {
 }
 
 function NoResults (props) {
+  const title = `${props.title} "${props.search}"`
+
   return (
     <View style={styles.container}>
-      <Title>{props.title}</Title>
+      <Title>{title}</Title>
       <Emoji name={props.emoji} />
     </View>
   )

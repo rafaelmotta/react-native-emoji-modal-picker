@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   text: {
     color: variables.titleColor,
     fontWeight: '500',
-    fontSize: variables.scale(16)
+    fontSize: variables.scale(18)
   }
 })
 
