@@ -4,7 +4,7 @@
 
 A Emoji Modal Picker
 
-⚠ This package is still in development. Bugs and suggestions are welcome :D
+⚠ This package is still in development. Suggestions are welcome :D
 
 ## Features
 
